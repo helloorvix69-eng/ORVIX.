@@ -1,0 +1,1415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f5f2">
+<meta name="description" content="ORVIX is an independent technology company founded by Ayush Kumar. We build digital experiences, intelligent software and modern web solutions.">
+<meta name="keywords" content="ORVIX, technology, AI, software development, web development, automation">
+<meta name="author" content="Ayush Kumar">
+
+<title>ORVIX — Technology Without Limits</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --light: #f5f5f2;
+  --white: #ffffff;
+  --dark: #101827;
+  --dark2: #18243a;
+  --blue: #4169ff;
+  --blue2: #7290ff;
+  --gray: #777d89;
+  --border: rgba(16,24,39,.12);
+  --radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(245,245,242,.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4c5360;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-btn {
+  background: var(--dark);
+  color: white !important;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: var(--dark);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 790px;
+  padding: 155px 0 95px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 570px;
+  height: 570px;
+  right: -150px;
+  top: 100px;
+  background: radial-gradient(circle,rgba(65,105,255,.16),transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 790px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--blue);
+  margin-bottom: 30px;
+  background: white;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4169ff;
+  box-shadow: 0 0 10px #4169ff;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(52px, 8vw, 100px);
+  line-height: .99;
+  letter-spacing: -6px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero-description {
+  margin-top: 30px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 550px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 8px 24px rgba(65,105,255,.23);
+}
+
+.btn-primary:hover {
+  background: #254ce8;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.hero-bottom {
+  margin-top: 90px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 110px 0;
+}
+
+.section-tag {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 17px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(35px,5vw,57px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  max-width: 720px;
+}
+
+.section-desc {
+  color: var(--gray);
+  line-height: 1.9;
+  max-width: 600px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+  background: var(--dark);
+  color: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about .section-desc {
+  color: #a8b0bf;
+}
+
+.about-box {
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,.13);
+  background: rgba(255,255,255,.045);
+  border-radius: var(--radius);
+}
+
+.about-box h3 {
+  font-family: 'Space Grotesk';
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.about-box p {
+  color: #a8b0bf;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+/* SERVICES */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.service-card {
+  padding: 30px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: .35s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue);
+  box-shadow: 0 15px 40px rgba(16,24,39,.07);
+}
+
+.service-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  background: #edf0ff;
+  color: var(--blue);
+  border-radius: 13px;
+  font-size: 22px;
+  margin-bottom: 27px;
+}
+
+.service-card h3 {
+  font-family: 'Space Grotesk';
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--gray);
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  background: #eceeea;
+}
+
+.portfolio-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.project {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(16,24,39,.09);
+}
+
+.project-art {
+  height: 270px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-art.blue-art {
+  background: linear-gradient(135deg,#172c62,#4169ff);
+}
+
+.project-art.light-art {
+  background: #e8ebf5;
+}
+
+.project-art.black-art {
+  background: #101827;
+}
+
+.art-circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#dce5ff,#4169ff);
+  box-shadow: 0 0 80px rgba(114,144,255,.4);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: 'Space Grotesk';
+  font-size: 45px;
+  font-weight: 700;
+  transition: .5s;
+}
+
+.project:hover .art-circle {
+  transform: rotate(15deg) scale(1.08);
+}
+
+.art-text {
+  font-family: 'Space Grotesk';
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-info h3 {
+  font-family: 'Space Grotesk';
+  font-size: 22px;
+}
+
+.project-info p {
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 9px;
+}
+
+.project-type {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 1px;
+}
+
+/* DOMAIN */
+
+.domain {
+  background: var(--dark);
+  color: white;
+}
+
+.domain-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.domain .section-desc {
+  color: #a8b0bf;
+}
+
+.domain-box {
+  padding: 35px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.05);
+}
+
+.domain-name {
+  font-family: 'Space Grotesk';
+  font-size: clamp(25px,4vw,40px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  word-break: break-word;
+}
+
+.domain-name span {
+  color: #7290ff;
+}
+
+.domain-status {
+  margin-top: 15px;
+  color: #9da9bb;
+  font-size: 12px;
+}
+
+/* PROCESS */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.process-card {
+  padding: 25px 20px;
+  border-top: 2px solid var(--blue);
+  background: white;
+}
+
+.process-number {
+  font-family: 'Space Grotesk';
+  font-size: 35px;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.process-card h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.process-card p {
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* FOUNDER */
+
+.founder {
+  background: #eceeea;
+}
+
+.founder-card {
+  background: var(--dark);
+  color: white;
+  padding: 55px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.founder-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#4169ff,#101827);
+  display: grid;
+  place-items: center;
+  font-family: 'Space Grotesk';
+  font-size: 65px;
+  font-weight: 700;
+  box-shadow: 0 20px 50px rgba(65,105,255,.2);
+}
+
+.founder-card .section-desc {
+  color: #a8b0bf;
+}
+
+.founder-name {
+  font-family: 'Space Grotesk';
+  font-size: 40px;
+  margin-top: 12px;
+}
+
+.founder-role {
+  color: #7290ff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-top: 40px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--blue);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-info {
+  padding: 30px;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.contact-info h3 {
+  font-family: 'Space Grotesk';
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* CTA */
+
+.cta {
+  padding: 90px 0;
+  background: var(--blue);
+  color: white;
+  text-align: center;
+}
+
+.cta h2 {
+  font-family: 'Space Grotesk';
+  font-size: clamp(35px,5vw,58px);
+  letter-spacing: -2px;
+}
+
+.cta p {
+  margin: 20px auto 30px;
+  color: rgba(255,255,255,.8);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 550px;
+}
+
+.cta .btn {
+  background: white;
+  color: var(--dark);
+}
+
+/* FOOTER */
+
+footer {
+  background: #0b111c;
+  color: white;
+  padding: 55px 0 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.footer-logo {
+  font-family: 'Space Grotesk';
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.footer-logo span {
+  color: #7290ff;
+}
+
+.footer-desc {
+  color: #8994a6;
+  font-size: 12px;
+  margin-top: 12px;
+  max-width: 280px;
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #a8b0bf;
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: #7290ff;
+}
+
+.footer-bottom {
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #7e899a;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 11px;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background: var(--light);
+    padding: 25px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .about-grid,
+  .domain-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .founder-card {
+    grid-template-columns: 1fr;
+    padding: 35px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 150px 0 70px;
+  }
+}
+
+@media(max-width:550px) {
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .services-grid,
+  .project-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-art {
+    height: 220px;
+  }
+
+  .hero-bottom {
+    margin-top: 60px;
+  }
+
+  .founder-card {
+    padding: 27px;
+  }
+
+  .founder-name {
+    font-size: 32px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">ORV<span>IX</span>.</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact" class="nav-btn">Let's Talk ↗</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content reveal">
+
+      <div class="eyebrow">
+        <span class="dot"></span>
+        INDEPENDENT TECHNOLOGY COMPANY
+      </div>
+
+      <h1>
+        Technology<br>
+        without <span>limits.</span>
+      </h1>
+
+      <p class="hero-description">
+        We imagine, design and build digital experiences
+        that move businesses forward. Welcome to ORVIX,
+        where technology meets creativity.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn btn-primary">
+          Explore Our Work ↗
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+          Discover ORVIX
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <span>INNOVATION FIRST</span>
+      <span>DESIGN WITH PURPOSE</span>
+      <span>BUILT FOR TOMORROW</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+
+      <div>
+        <div class="section-tag">01 / WHO WE ARE</div>
+        <h2 class="section-title">
+          We build ideas into digital reality.
+        </h2>
+
+        <p class="section-desc">
+          ORVIX is an independent technology company focused
+          on creating modern digital solutions. We believe
+          technology should be powerful, accessible and
+          meaningful.
+          <br><br>
+          Our vision is to explore possibilities, solve
+          real-world problems and create digital products
+          that make a difference.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Philosophy.</h3>
+        <p>
+          Think beyond boundaries. Create with purpose.
+          Develop with precision. Every idea is an opportunity
+          to build something extraordinary.
+          <br><br>
+          We are building ORVIX with a long-term vision
+          of innovation, creativity and excellence.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-tag">02 / WHAT WE DO</div>
+      <h2 class="section-title">
+        Technology designed for progress.
+      </h2>
+      <p class="section-desc">
+        Exploring modern technologies to develop solutions
+        for tomorrow's digital world.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">✳</div>
+        <h3>AI & Automation</h3>
+        <p>
+          Intelligent workflows, AI-powered tools,
+          chatbots and automation concepts.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">⌘</div>
+        <h3>Web Development</h3>
+        <p>
+          Modern, responsive websites and digital
+          experiences built with purpose.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">◈</div>
+        <h3>Software Solutions</h3>
+        <p>
+          Exploring practical software products
+          and tools to solve everyday challenges.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">◎</div>
+        <h3>UI/UX Design</h3>
+        <p>
+          Clean interfaces, thoughtful experiences
+          and user-focused digital design.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">⌘</div>
+        <h3>Digital Strategy</h3>
+        <p>
+          Digital planning, brand presence
+          and technology-focused ideas.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">↗</div>
+        <h3>Future Innovation</h3>
+        <p>
+          Researching emerging technologies
+          and exploring new digital possibilities.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+  <div class="container">
+
+    <div class="portfolio-heading reveal">
+      <div>
+        <div class="section-tag">03 / SELECTED WORK</div>
+        <h2 class="section-title">
+          Ideas worth exploring.
+        </h2>
+        <p class="section-desc">
+          A space for our digital experiments,
+          creative concepts and projects.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project reveal">
+        <div class="project-art blue-art">
+          <div class="art-circle">AI</div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">AI / TECHNOLOGY</span>
+          <h3>Intelligent Systems</h3>
+          <p>
+            Exploring the potential of intelligent
+            technology and AI-powered experiences.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-art light-art">
+          <div class="art-text" style="color:#101827">
+            DIGITAL.
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">WEB / DEVELOPMENT</span>
+          <h3>Digital Experiences</h3>
+          <p>
+            Modern web concepts focused on usability,
+            performance and visual quality.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-art black-art">
+          <div class="art-text" style="color:white">
+            ORVIX
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">BRANDING / DESIGN</span>
+          <h3>Brand Identity</h3>
+          <p>
+            Building a distinctive visual identity
+            for a technology-focused brand.
+          </p>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-art blue-art">
+          <div class="art-circle">∞</div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">INNOVATION / CONCEPT</span>
+          <h3>Future Technologies</h3>
+          <p>
+            Exploring new ideas and opportunities
+            through technology and creativity.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOMAIN -->
+
+<section class="domain" id="domain">
+  <div class="container">
+    <div class="domain-content reveal">
+
+      <div>
+        <div class="section-tag">04 / OUR DIGITAL IDENTITY</div>
+        <h2 class="section-title">
+          One identity. Endless possibilities.
+        </h2>
+        <p class="section-desc">
+          ORVIX is designed to be more than a name.
+          It represents a vision to build, innovate
+          and grow in the digital world.
+        </p>
+      </div>
+
+      <div class="domain-box">
+        <div class="domain-name">
+          orvix<span>.com</span>
+        </div>
+        <p class="domain-status">
+          Official domain — replace with your actual
+          registered domain if different.
+        </p>
+        <br>
+        <a href="https://helloorvix69-eng.github.io/ORVIX/"
+           target="_blank" rel="noopener"
+           class="btn btn-primary">
+          Visit ORVIX ↗
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section id="process">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-tag">05 / OUR APPROACH</div>
+      <h2 class="section-title">
+        From imagination to execution.
+      </h2>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card reveal">
+        <div class="process-number">01</div>
+        <h3>Discover</h3>
+        <p>Understand the idea, challenge and vision.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <div class="process-number">02</div>
+        <h3>Design</h3>
+        <p>Plan the experience and create the strategy.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <div class="process-number">03</div>
+        <h3>Develop</h3>
+        <p>Turn concepts into working digital solutions.</p>
+      </div>
+
+      <div class="process-card reveal">
+        <div class="process-number">04</div>
+        <h3>Evolve</h3>
+        <p>Improve, innovate and keep moving forward.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+
+<section class="founder" id="founder">
+  <div class="container">
+
+    <div class="founder-card reveal">
+
+      <div>
+        <div class="founder-avatar">AK</div>
+      </div>
+
+      <div>
+        <div class="section-tag">06 / THE PERSON BEHIND ORVIX</div>
+
+        <h2 class="founder-name">Ayush Kumar</h2>
+
+        <div class="founder-role">
+          FOUNDER & COMPANY LEADER
+        </div>
+
+        <p class="section-desc">
+          ORVIX is founded and led by Ayush Kumar,
+          with a vision to create a technology-driven
+          company built around innovation and ambition.
+          <br><br>
+          The journey starts with an idea, grows through
+          learning and takes shape through consistent work.
+          ORVIX represents that ambition.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-tag">07 / GET IN TOUCH</div>
+      <h2 class="section-title">
+        Let's create something meaningful.
+      </h2>
+      <p class="section-desc">
+        Have an idea, project or collaboration in mind?
+        Start a conversation with ORVIX.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <form class="contact-form reveal" id="contactForm">
+
+        <input type="text" id="name"
+          placeholder="Your full name" required>
+
+        <input type="email" id="email"
+          placeholder="Your email address" required>
+
+        <select id="service" required>
+          <option value="">Select a service</option>
+          <option>Web Development</option>
+          <option>AI & Automation</option>
+          <option>Software Solutions</option>
+          <option>UI/UX Design</option>
+          <option>Other</option>
+        </select>
+
+        <textarea id="message"
+          placeholder="Tell us about your project..."
+          required></textarea>
+
+        <button type="submit" class="btn btn-primary">
+          Send Inquiry ↗
+        </button>
+
+      </form>
+
+      <div class="contact-info reveal">
+        <h3>Start a conversation.</h3>
+        <p>
+          Every great project begins with a conversation.
+          Tell us what you have in mind.
+          <br><br>
+          Company: ORVIX<br>
+          Founder: Ayush Kumar<br>
+          Industry: Technology<br>
+          Location: India
+          <br><br>
+          Email: Add your official company email
+          before publishing.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+  <div class="container reveal">
+    <h2>The future is built today.</h2>
+    <p>
+      Think bigger. Create smarter. Move forward.
+      Welcome to the world of ORVIX.
+    </p>
+    <a href="#contact" class="btn">
+      Build With ORVIX ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+        <div class="footer-logo">ORV<span>IX.</span></div>
+        <p class="footer-desc">
+          Technology without limits.
+          An independent technology vision led by
+          Ayush Kumar.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> ORVIX. All rights reserved.</span>
+      <span>Founded by Ayush Kumar · India</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  menuBtn.textContent =
+    navLinks.classList.contains("active") ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuBtn.textContent = "☰";
+  });
+});
+
+// SCROLL ANIMATIONS
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// CONTACT FORM
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value.trim();
+
+  // Replace this with your real company email.
+  const companyEmail = "YOUR_EMAIL@example.com";
+
+  const subject = encodeURIComponent("New ORVIX Project Inquiry");
+  const body = encodeURIComponent(
+    "Name: " + name +
+    "\nEmail: " + email +
+    "\nService: " + service +
+    "\nMessage: " + message
+  );
+
+  window.location.href =
+    "mailto:" + companyEmail +
+    "?subject=" + subject +
+    "&body=" + body;
+});
+
+</script>
+
+</body>
+</html>
